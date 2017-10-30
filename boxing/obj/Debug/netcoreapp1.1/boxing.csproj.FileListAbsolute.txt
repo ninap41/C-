@@ -1,0 +1,8 @@
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/bin/Debug/netcoreapp1.1/boxing.deps.json
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/bin/Debug/netcoreapp1.1/boxing.runtimeconfig.json
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/bin/Debug/netcoreapp1.1/boxing.runtimeconfig.dev.json
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/bin/Debug/netcoreapp1.1/boxing.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/bin/Debug/netcoreapp1.1/boxing.pdb
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/obj/Debug/netcoreapp1.1/boxing.AssemblyInfo.cs
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/obj/Debug/netcoreapp1.1/boxing.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/boxing/obj/Debug/netcoreapp1.1/boxing.pdb
