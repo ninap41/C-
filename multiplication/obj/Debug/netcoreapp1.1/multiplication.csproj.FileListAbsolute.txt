@@ -1,0 +1,8 @@
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/bin/Debug/netcoreapp1.1/multiplication.deps.json
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/bin/Debug/netcoreapp1.1/multiplication.runtimeconfig.json
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/bin/Debug/netcoreapp1.1/multiplication.runtimeconfig.dev.json
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/bin/Debug/netcoreapp1.1/multiplication.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/bin/Debug/netcoreapp1.1/multiplication.pdb
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/obj/Debug/netcoreapp1.1/multiplication.AssemblyInfo.cs
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/obj/Debug/netcoreapp1.1/multiplication.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/multiplication/obj/Debug/netcoreapp1.1/multiplication.pdb
