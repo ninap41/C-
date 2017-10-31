@@ -23,10 +23,10 @@ namespace ConsoleApplication
             Human myHuman1= new Human("Nina",20,5,3,100);
             Human myHuman2= new Human("Evil NPC",20,5,3,100);  
              //PASS THROUGH THINGS new box object. new invokes it to build an object.
-        Console.WriteLine("Human:I am" + myHuman1.name +  "I'm durable and agile in battle, my dexterity is " + myHuman1.dexterity+ ".");
-        Console.WriteLine("Enemy:I am an" + myHuman2.name + " I'm strong in battle, my health is " + myHuman2.health+ ".");
+        Console.WriteLine("Human: I am " + myHuman1.name +  " I'm durable and agile in battle, my dexterity is " + myHuman1.dexterity+ ".");
+        Console.WriteLine("Enemy: I am an " + myHuman2.name + " I'm strong in battle, my health is " + myHuman2.health+ ".");
         myHuman1.Attack(myHuman2);
-        Console.WriteLine("Enemy:Oh No I was Attacked! My health is now " + myHuman2.health+ ".");
+        Console.WriteLine("Enemy: Oh No I was Attacked! My health is now " + myHuman2.health+ ".");
 
 
         }
