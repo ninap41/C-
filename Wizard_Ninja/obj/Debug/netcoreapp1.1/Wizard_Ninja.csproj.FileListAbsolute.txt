@@ -1,0 +1,8 @@
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/bin/Debug/netcoreapp1.1/Wizard_Ninja.deps.json
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/bin/Debug/netcoreapp1.1/Wizard_Ninja.runtimeconfig.json
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/bin/Debug/netcoreapp1.1/Wizard_Ninja.runtimeconfig.dev.json
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/bin/Debug/netcoreapp1.1/Wizard_Ninja.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/bin/Debug/netcoreapp1.1/Wizard_Ninja.pdb
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/obj/Debug/netcoreapp1.1/Wizard_Ninja.AssemblyInfo.cs
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/obj/Debug/netcoreapp1.1/Wizard_Ninja.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/Wizard_Ninja/obj/Debug/netcoreapp1.1/Wizard_Ninja.pdb

@@ -1,0 +1,4 @@
+/Users/Niner/Desktop/DojoAssignments/netCore/bin/Debug/netcoreapp1.1/netCore.deps.json
+/Users/Niner/Desktop/DojoAssignments/netCore/bin/Debug/netcoreapp1.1/netCore.runtimeconfig.json
+/Users/Niner/Desktop/DojoAssignments/netCore/bin/Debug/netcoreapp1.1/netCore.runtimeconfig.dev.json
+/Users/Niner/Desktop/DojoAssignments/netCore/obj/Debug/netcoreapp1.1/netCore.AssemblyInfo.cs

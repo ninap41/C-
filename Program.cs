@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Wizard_Ninja_Samurai
+namespace netCore
 {
     class Program
     {
