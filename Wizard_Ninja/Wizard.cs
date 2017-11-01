@@ -1,10 +1,8 @@
-namespace ConsoleApplication{
-public class Wizard : Human
-{ 
+// namespace ConsoleApplication{
+// public class Wizard : Human
+// { 
+    // public Wizard
 
-    public class Attributes {
+// }
 
-    }
-}
-
-}
+// }
