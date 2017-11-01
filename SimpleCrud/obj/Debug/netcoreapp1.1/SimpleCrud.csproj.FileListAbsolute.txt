@@ -1,0 +1,8 @@
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/bin/Debug/netcoreapp1.1/SimpleCrud.deps.json
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/bin/Debug/netcoreapp1.1/SimpleCrud.runtimeconfig.json
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/bin/Debug/netcoreapp1.1/SimpleCrud.runtimeconfig.dev.json
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/bin/Debug/netcoreapp1.1/SimpleCrud.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/bin/Debug/netcoreapp1.1/SimpleCrud.pdb
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/obj/Debug/netcoreapp1.1/SimpleCrud.AssemblyInfo.cs
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/obj/Debug/netcoreapp1.1/SimpleCrud.dll
+/Users/Niner/Desktop/DojoAssignments/netCore/SimpleCrud/obj/Debug/netcoreapp1.1/SimpleCrud.pdb
