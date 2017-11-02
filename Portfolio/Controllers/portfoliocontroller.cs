@@ -6,7 +6,7 @@ namespace portfolio.Controllers
     public class portfoliocontroller : Controller
     {
         [HttpGet]
-        [Route("")]
+        [Route("/")]
           public IActionResult Index()
         {
             return View();

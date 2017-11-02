@@ -24,10 +24,10 @@ namespace portfolio
             loggerFactory.AddConsole();
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+            app.UseDeveloperExceptionPage();
             }
-               app.UseMvc();
-               app.UseStaticFiles();
+            app.UseMvc();
+            app.UseStaticFiles();
                
         }
     }
