@@ -1,17 +1,24 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
  
-namespace YourNamespace.Controllers
+namespace Time_Display.Controllers
 {
-    public class HelloController : Controller
+    public class timecontroller : Controller
     {
         [HttpGet]
         [Route("")]
-        public string Index(){
+        public IActionResult Index(){
 
          return View();
            
         }
+
+//         [HttpPost]
+//         [Route("")]
+//         public IActionResult Other()
+// {
+//     // Return a view (We'll learn how soon!)
+// }
 
     }
 }
