@@ -19,12 +19,9 @@ namespace callingcard.Controllers
                         FavColor = "Brown"
                      };
 
-            
-
-
      
 
-    return Json(AnonObject.FirstName, AnonObject.LastName, AnonObject.Age, AnonObject.FavColor);
+    return Json($"First Name: {AnonObject.FirstName} Last Name: {AnonObject.LastName} Age: {AnonObject.Age} Favorite Color: {AnonObject.FavColor}");
             }
             //This builds a JSON response with the given route parameters
         }
