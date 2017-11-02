@@ -1,0 +1,64 @@
+body {
+     color: grey;
+}
+a {
+    text-decoration: None;
+    font-style: bold;
+    color: grey;
+}
+
+.Nav {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+
+}
+.Nav a{
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin: 0px auto;
+
+}
+.Nav h1{
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin: 0px auto;
+    padding-right: 3rem;
+
+}
+
+
+.form_contain {
+    width: 400px;
+    margin: 0px auto;
+}
+
+img {
+    margin: 0px auto;
+    border: 1px solid black;
+    margin-left:35%;
+    border-radius: 10px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+h2 {
+    text-align: center;
+}
+p {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20%;
+}
+
+form {
+    padding: 10px;
+}
+
+.Container {
+    padding: 10%;
+    margin: 20%;
+    margin-top: -10rem;
+    margin-bottom: -15rem;
+}

@@ -7,12 +7,12 @@ namespace callingcard.Controllers
     {
 
         [HttpGet]
-        [Route("/")]
+        [Route("/{FirstName}/{LastName}/{Age}/{FavColor}")]
         public JsonResult CallCard(string FirstName, string LastName, int Age, string FavColor)
         
         {
 
-             var AnonObject = new {
+            var AnonObject = new {
                          FirstName = "Tim",
                          LastName = "Toolman",
                          Age = 42,
