@@ -14,41 +14,41 @@ namespace Dojo_Survey.Controllers
             return View();
         }   
 
-         [HttpPost]
+        [HttpPost]
         [Route("/process")]
-        public IActionResult Result(string name, string location,string language, string comment)
+        public IActionResult result(string name, string location,string language, string comment)
 
         {
-            ViewBag.Errors = new List<string>();
+            // ViewBag.Errors = new List<string>();
 
-            if(name == null){
-                ViewBag.Errors.Add("Please Enter A Name");
-            }
-             if(location == null){
-                ViewBag.Errors.Add("Please Enter A Location");
-            }
-             if(language == null){
-                ViewBag.Errors.Add("Please Enter A Language");
-            }
-                if(comment == null){
-                comment= "";
-            }
+            // if(name == null){
+            //     ViewBag.Errors.Add("Please Enter A Name");
+            // }
+            //  if(location == null){
+            //     ViewBag.Errors.Add("Please Enter A Location");
+            // }
+            //  if(language == null){
+            //     ViewBag.Errors.Add("Please Enter A Language");
+            // }
+            //     if(comment == null){
+            //     comment= "";
+            // }
 
-            if(ViewBag.Errors.Count == 0){
-                return View("/");
-
-            }
+            // if(ViewBag.Errors.Count > 0){
+            //     return View("/");
+            // }
 
             ViewBag.Name = name;
             ViewBag.Location = location;
             ViewBag.Language = language;
             ViewBag.Comment=comment;
 
-             return View("result");
+            return View();
 
 
 
         }  
+        
 
         
     }

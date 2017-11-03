@@ -1,0 +1,26 @@
+.Nav {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+
+}
+
+
+.Nav a{
+    display: inline-block;
+    width: 10%;
+    vertical-align: top;
+    margin: 0px auto;
+
+}
+.Nav h1{
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin: 0px auto;
+    padding-right: 3rem;
+    margin-right: 20rem;
+
+}
