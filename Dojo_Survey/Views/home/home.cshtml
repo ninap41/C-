@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link rel="stylesheet" href="~/css/home.css"/>
+        <title>Survey</title>
+    </head>
+    <body>
+
+<!-- RAzor View Engine Loop through  projects as an objects and output Title image and small description -->
+
+  <div class="Nav">
+             <h1>Survey</h1>
+            
+      
+             
+            <a href="https://github.com/ninap41"><p>Github</p></a>
+            <a href="/"><p>Home</p></a>
+</div>
+   @foreach(var error in ViewBag.Errors)
+            {  
+                <p class="red">@error</p>
+
+            }
+    <div class="Container">
+            <fieldset>
+              <legend><h1>Dojo Survey</h1></legend>
+       
+                <form action="/process" method="post">
+               <label for="name">Name: </label>
+            <input type="text" name ="name"><br><br>
+               <label for="location"> Dojo Location:</label>
+                <select name="location" class= "line_em" > <br><br>
+                    <option value=""></option name='chosen'>
+                    <option value="Chicago">Chicago</option name='chosen'>
+                    <option value="Dallas">Dallas</option name='chosen'>
+                    <option value="Seattle">Seattle</option name='chosen'>
+                    <option value="Mars">Mars</option name='chosen'>   
+                </select> <br><br>
+                <label for="language"> Favorite Language:</label>
+                <select name ="language" class= "line_em"><br><br>
+                     <option value=""></option name='chosen'>
+                    <option value="Python">Python</option name='chosen'>
+                    <option value="Javascript">Javascript</option name='chosen'>
+                <option value="C#">C#</option name='chosen'>
+
+                    <option value="Html/CSS">Html/Css</option name='chosen'>
+                    <option value="Java">Java</option name='chosen'>
+                </select><br><br>
+                <label for="comment">  Comment (optional)</label>
+               <textarea  type="text" name="comment"></textarea><br>
+                <br>
+                <input type='submit' value='submit'>
+                </form>
+            </fieldset>
+            </div>
+            
+
+    </body>
+    </html>
