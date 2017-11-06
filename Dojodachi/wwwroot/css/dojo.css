@@ -1,0 +1,83 @@
+.Nav {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+
+}
+
+
+.Nav a{
+    display: inline-block;
+    width: 10%;
+    vertical-align: top;
+    margin: 0px auto;
+
+}
+.Nav h1{
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    margin: 0px auto;
+    padding-right: 3rem;
+    margin-right: 20rem;
+
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: top;
+    
+}
+
+#Stat {
+    color: red;
+}
+
+
+.Wrapper {
+    display: relative;
+    margin: auto 0rem;
+    text-align: center;
+    width: 40rem;
+    padding: 10rem;
+    padding-bottom: 20rem;
+   height: 20rem;
+    border-radius:48%;
+    border: 4px dotted pink;
+    background-image:url('polka.jpg');
+    background-repeat:repeat;
+  
+    margin-left: 20rem;
+    border: .5px solid black;
+  
+}
+.img_wrap {
+    background-color: white;
+    width: 18rem;
+    margin-left: 10rem;
+    padding: 1rem;
+
+    margin-bottom: 1.5rem;
+    border: .5px solid black;
+}
+.inline  {
+    background-color: white;
+
+
+}
+
+.Wrapper{
+    font-size: .50rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.White {
+    margin-left:10rem;
+    padding-bottom: .5rem;
+    width: 20rem;
+    background-color: white;
+    border: .5px solid black;
+}

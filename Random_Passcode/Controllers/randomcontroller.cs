@@ -50,7 +50,7 @@ namespace random_Passcode.Controllers
         {
             HttpContext.Session.Clear();
 
-            return View("/");
+            return RedirectToAction("random");
             //return View("Index");
         }
         
