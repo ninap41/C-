@@ -27,7 +27,6 @@ namespace Dojodachi.Controllers
             if(HttpContext.Session.GetInt32("meals") == null){
                     HttpContext.Session.SetString("alive","alive");
                     HttpContext.Session.SetString("emotion", "He Seems okay!");
-
                     HttpContext.Session.SetInt32("fullness", 20); 
                     HttpContext.Session.SetInt32("happiness", 20);
                     HttpContext.Session.SetInt32("meals", 3);

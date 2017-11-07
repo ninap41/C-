@@ -1,0 +1,19 @@
+@model loginregistration.Models.LoginUser
+
+<h1>Login</h1>
+<form asp-action="Login" asp-controller="Home" method="post">
+    <div class="form-align"> 
+        <!-- align form elelements -->
+        <span asp-validation-for="LogEmail"></span>
+        <label asp-for="LogEmail"></label>
+        <input asp-for="LogEmail">
+    </div>
+    <div class="form-align"> 
+        <!-- align form elelements -->
+        <span asp-validation-for="LogPassword"></span>
+        <label asp-for="LogPassword"></label>
+        <input class="form-align" asp-for="LogPassword">
+    </div>
+    <input type="submit" value="Submit">
+</form>
+<hr>

@@ -5,6 +5,7 @@ namespace Form_Submission.Models
 
 
     public class User {
+        
         [Required]
         [MinLength(4)]
         public string FirstName {get; set;}

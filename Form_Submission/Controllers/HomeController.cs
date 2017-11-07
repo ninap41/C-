@@ -15,7 +15,7 @@ namespace Form_Submission.Controllers
         [Route("")]
         public IActionResult Index(string new_users)
         {
-           ViewBag.new_users = new_users;
+        //    ViewBag.new_users = new_users;
 
 
             return View();
@@ -40,7 +40,8 @@ namespace Form_Submission.Controllers
 
                if (TryValidateModel(NewUser) == false)
             {
-                ViewBag.ModelFields = ModelState.Values;
+                ViewBag.ModelFields = ModelState.Values;  // tempdata will not work, if you redirect with tempdata you'll get a serialized error
+                //was ViewBag.errors = ModelStat.Values; this does not work. 
                 return View();
             }
             // otherwise validation passes, redirect to success
