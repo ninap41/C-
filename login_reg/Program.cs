@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Form_Submission
+namespace login_reg
 {
     public class Program
     {
@@ -14,7 +14,6 @@ namespace Form_Submission
                 .Build();
 
             host.Run();
-
         }
     }
 }

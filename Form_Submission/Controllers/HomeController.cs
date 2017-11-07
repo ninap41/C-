@@ -24,7 +24,7 @@ namespace Form_Submission.Controllers
         [HttpPost]
         [Route("/process")]                     //strings below to be "set"
         public IActionResult Process(string first_name, string last_name, string email, int age, string password){
-            User newUser =  new User  //constructor
+             User NewUser = new User //constructor
             {   // var left are GET from Models, left is SET from parameters above
                 FirstName = first_name,
                 LastName = last_name,
@@ -33,35 +33,33 @@ namespace Form_Submission.Controllers
                 Password = password
 
             };
-                string newError = "";
-                
-                
-                ViewBag.newError = newError;
+
+                // string newError = "";
+                // ViewBag.newError = errors
             
 
-            if(TryValidateModel(newUser) == false){
-                ViewBag.errors = ModelState.Values;
-                
-
-
-
+               if (TryValidateModel(NewUser) == false)
+            {
+                ViewBag.ModelFields = ModelState.Values;
                 return View();
             }
+            // otherwise validation passes, redirect to success
             else
             {
-                List<object> new_users = new List<object>();
-                new_users.Add(newUser);
-            
+                return RedirectToAction("Success");  
+            }
 
-                return RedirectToAction("Success", newUser);
-            }   
+           
 
         }
         [HttpGet]
         [Route("/success")]
         public IActionResult Success(){
             string success_message = "You Have Registered Successfully!";
+            
             ViewBag.success_message = success_message;
+            
+
 
             
            

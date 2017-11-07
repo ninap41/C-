@@ -11,7 +11,7 @@
     </div>
 
     <!-- space for errors -->
- @{
+       @{
             foreach(var field in ViewBag.ModelFields)
             {
                 if (field.Errors.Count > 0)
@@ -20,6 +20,7 @@
                 }
             }
         }
+     
 
 
 
