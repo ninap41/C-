@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="Nav">
+       <h1>Create User</h1>
+       <h3 >Register and Login</h3> 
+        <a href="https://github.com/ninap41"><p>Github</p></a>
+        <a href="Index"><p>Home</p></a>    
+</div>
+
+
+
+@Html.Partial("./Partials/LoginForm")
+@Html.Partial("./Partials/RegisterForm")
+<ul>
+@{
+    @foreach(var user in ViewBag.allUsers)
+    {
+        @foreach(var kvp in user)
+        {
+            <h1>@kvp.Key @kvp.Value</h1>
+
+        }
+       
+    }
+}
+</ul>
