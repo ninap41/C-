@@ -1,10 +1,29 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System;
+
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Woods.Models
 {
 
-    public class Trails : BaseEntity {
+       public class Trail
+    {
+        public int Id { get; set; }
+        public string Trail_Name{ get; set; }
+        public string Description{ get; set; }
+        public float Trail_Length{ get; set; }
+        public int Elevation_Change{ get; set; }
+        public float Latitude{ get; set; }
+        public float Longitude{ get; set; }
+
+    }
+  
+    public class MakeTrails : BaseEntity {
+        [Key]
+        public long Id { get; set; }        
+    
         [Required]
         [MinLength(2, ErrorMessage="Field must be at least two characters long")]
         [Display(Name = "Trail_Name")]
@@ -12,7 +31,6 @@ namespace Woods.Models
 
         [Required]
         [MaxLength(300, ErrorMessage="Description cannot exceed 300 characters")]
-        [MinLength(10, ErrorMessage="Description must be at least 10 characters")]
 
         [Display(Name = "Description")]
         public string Description{ get; set; }
@@ -29,23 +47,27 @@ namespace Woods.Models
 
         [Required]
         [MinLength(0, ErrorMessage="Please submit a valid coordinate (ex: -40.01209)")]
-        [Range(-180, 180, ErrorMessage="Longitude out of range")]
+        [Range(-180, 180)]
         [Display(Name = "Latitude")]
         public float Latitude{ get; set; }
 
         [Required]
         [MinLength(0, ErrorMessage="Please submit a valid coordinate (ex: -40.01209)")]
-        [Range(-90, 90, ErrorMessage="Latitude out of range")]
+        [Range(-90, 90)]
         [Display(Name = "Longitude")]
         public float Longitude{ get; set; }
     }
+    
 
-     public class Wrapper : BaseEntity {
-        public List<Trails> Trails { get; set; }
-        public Wrapper(List<Trails> trails)
-        {
-            Trails = trails;
-        }
+
+  
+
+    //  public class Wrapper : BaseEntity {
+    //     public List<Trails> Trails { get; set; }
+    //     public Wrapper(List<Trails> trails)
+    //     {
+    //         Trails = trails;
+    //     }
 //     public class WoodsContext : DbContext
 //   {
 //      //include all models as DbSets ie. public DbSet<Guest> Guests {get; set;}
@@ -54,6 +76,6 @@ namespace Woods.Models
 //   { }
 //   }
 
-     }
+    //  }
 
 }

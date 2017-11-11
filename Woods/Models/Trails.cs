@@ -7,8 +7,8 @@ namespace Woods.Models
 {
   
     public class Trails : BaseEntity {
-        // [Key]
-        // public int idtrail {get; set;}
+          [Key]
+        public long Id { get; set; }
     
         [Required]
         [MinLength(2, ErrorMessage="Field must be at least two characters long")]

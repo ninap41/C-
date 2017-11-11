@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Woods.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 
 
@@ -29,6 +30,7 @@ namespace Woods.Controllers
         {
             _trailFactory = trailFactory; //Factory Added Here
             _dbConnector = connector;
+            
         }
   
         // GET: /Home/
