@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Extensions.Options;
 using MySql.Data.MySqlClient;
+using MySql.Data; 
  
-namespace newloginreg
+namespace TheWall
 {
     public class DbConnector
     {

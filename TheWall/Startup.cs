@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 
 
-namespace newloginreg
+namespace TheWall
 {
     public class Startup
     {

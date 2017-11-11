@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Woods.Models.Trails
+<style>
+  
+.form_top {padding: 2rem;}
+tr {border-bottom:1px double aqua; width: 8rem;}
+.head {border-bottom: 1px double aqua;padding: 2rem;}
+
+</style>
+
+
+
+
+
+<div class="form_top">
+
+<table class="Padding_Please">
+    <legend><h1 class="head">Hiking Trails</h1></legend>
+    <tr>
+    
+    <th>Trail Name</th>
+    <th>Description </th>
+    <th> Trail Length </th>
+    <th> Elevation Gain </th>
+    <th>Latitude</th>
+     <th>Longitude</th>
+    </tr>
+@{
+    @foreach(var trail in ViewBag.allTrails)
+    {
+         <tr>
+           <td>@trail.Trail_Name</td>
+            <td>'' @trail.Description ''</td>
+            <td>@trail.Trail_Length m</td>
+            <td>@trail.Elevation_Change ft</td>
+            <td>@trail.Latitude</td>
+            <td>@trail.Longitude</td>
+         </tr>
+    }
+
+
+} 
+
+</table>
+
+</div>
+
+
+

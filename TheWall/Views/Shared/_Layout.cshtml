@@ -10,9 +10,68 @@
             asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
     
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .padding_please{ width: 50rem; text-align: center; display:inline-block}
+         h2 {margin-left:25%; margin-top:-1%; color: navy;}
+        #Space {margin-top: 7%; font-style: italic; font-size: 5rem;color: black;}
+        #Move {margin-left:26%;color: navy;}
+        a{text-decoration: none;}
+        a:hover{
+            color: rgb(58, 195, 232);
+            text-decoration: underline overline;
+        }
+
+        #button :hover {
+            color: rgb(58, 195, 232);
+           
+             
+        }
+        .Padding_Please {
+            width: 42%;
+            margin-left: 30%;
+            text-align: center;
+
+        }
+        h1[value="Header"]{
+            padding-left: 1rem;
+            background-color:  black;
+            color: white;
+             border: .5px dotted black;
+        }
+        h3[value="Header"]{
+            padding-left: 1rem;
+            background-color:  white;
+            color: black;
+            border: .5px dotted black;
+        }
+        button:hover {
+            background-color: black;
+        }
+        
+        
+    </style>
 </head>
 <body>
     <div class="container body-content">
+
+
+        <div class="Nav">
+       <h1 value="Header">The Wall</h1>
+       
+ @if(@ViewBag.firstname == null){<h3 value="Header">Register and Login</h3>}
+ @if(!string.IsNullOrEmpty(ViewBag.firstname)){<h3 value="Header">Hello, @ViewBag.firstname! </h3>}
+
+        <a href="https://github.com/ninap41"><p>Github</p></a>
+        <a asp-action="Index"><p>Home</p></a> 
+      <a asp-action="Logout"><p>Logout</p></a>
+
+</div>
+
+         @if(@ViewBag.firstname == null){<p class="Padding_Please"><b>"Dear Stranger, 'The Wall' is a glorious place of mystery and wonder. A unique platform for sharing ideas and opinions for all topics, big or small. Please Login/Register below to begin connecting"</b></p>}
+
+
+
+
         @RenderBody()
     </div>
         

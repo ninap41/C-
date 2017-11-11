@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Woods.Models.User
+<style>
+    .Wide_Butt {margin-left:30%;}
+</style>
+
+
+
+<div class="form_top">
+
+<table class="Padding_Please">
+
+    <h1 class="head">Hiking Trails</h1>
+    <tr>
+    
+    <th>Trail Name</th>
+    <th>Description </th>
+    <th> Trail Length </th>
+    <th> Elevation Gain </th>
+    <th>Latitude</th>
+     <th>Longitude</th>
+    </tr>
+@{
+
+  
+    @foreach(var trail in ViewBag.allTrails)
+    {
+         <tr>
+        @foreach(var kvp in trail)
+        {
+           
+            if(@kvp.Key == "trail_name")
+            {
+            
+            <td>@kvp.Value</td>
+       
+            }
+            if(@kvp.Key == "description")
+            {
+            
+            <td>@kvp.Value</td>
+       
+            }
+            if(@kvp.Key == "trail_length")
+            {
+            
+            <td>@kvp.Value</td>
+            }
+            if(@kvp.Key == "elevation_change")
+            {
+            
+            <td>@kvp.Value</td>
+            }
+            if(@kvp.Key == "latitude")
+            {
+            
+            <td>@kvp.Value</td>
+            }
+            if(@kvp.Key == "longitude")
+            {
+            
+            <td>@kvp.Value</td>
+            }
+        }
+         </tr>
+    }
+
+
+} 
+
+</table>
+        <h3><a href="Add_Trail"><button  class="Wide_Butt">Add Trail</button></a></h3>
+
+</div>
+
+
+

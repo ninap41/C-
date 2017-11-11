@@ -1,19 +1,92 @@
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login";
 }
-@model newloginreg.Models.User
-
-<div class="Nav">
-       <h1>Create User</h1>
-       <h3 >Register and Login</h3> 
-        <a href="https://github.com/ninap41"><p>Github</p></a>
-        <a asp-action="Index"><p>Home</p></a> 
+@model TheWall.Models.User
 
 
 
+<style>
+    .Wide_Butt {margin-left:30%;color: rgb(57, 57, 57);width: 50%;margin-top:5%;  }
+
+    .form_top{  width: 40%; vertical-align: top; display: inline-block; color: rgb(57, 57, 57)}
+    #Color_Please{color: rgb(57, 57, 57); }
+    .form_top2{  margin-right: -10rem;width: 49%; vertical-align: top;display: inline-block;margin-top:5%;}
+    .Wide_Butt:hover {color: rgb(58, 195, 232);}
+    .head {
+        margin-left: 10rem; margin-right: -10rem;
+    }
+    #Color_Please[value="buzz"]:hover{ color: rgb(58, 195, 232)}
+</style>
+
+ @if(!string.IsNullOrEmpty(ViewBag.firstname)){
+
+<div class="form_top2">
+        <h2 class="Padding_Please" id="Color_Please">Thank You for visiting us. Are you ready to start a <div id="Color_Please" value="buzz">buzz?</div></h2>
+        
+        <h3><button asp-action="Redirect" class="Wide_Butt">Traverse The Wall</button></h3>
+        
 </div>
-<h1>Login</h1>
-<form asp-action="Login" asp-controller="Home" method="post">
+       
+        
+<div class="form_top">
+
+<table class="Padding_Please">
+
+    <h1 class="head">Current Users</h1>
+    <tr>
+    
+    <th>First Name</th>
+    <th>Last Name </th>
+    <th>Email </th>
+    </tr>
+
+@{
+
+  
+    @foreach(var user in ViewBag.allUsers)
+    {
+         <tr>
+        @foreach(var kvp in user)
+        {
+           
+            if(@kvp.Key == "first_name")
+            {
+            
+            <td>@kvp.Value</td>
+       
+            }
+            if(@kvp.Key == "last_name")
+            {
+            
+            <td>@kvp.Value</td>
+       
+            }
+            if(@kvp.Key == "email")
+            {
+            
+            <td>@kvp.Value</td>
+            }
+        }
+         </tr>
+    }
+
+
+} 
+
+</table>
+</div>
+
+
+}
+
+
+
+
+    @if(@ViewBag.firstname == null){
+<div id="LogReg">
+
+<form asp-action="Login" asp-controller="Home" method="post" class="form-align">
+     <h1>Login</h1>
     <span asp-validation-for="Email"></span>
     <div class="form-group">
         <label asp-for="Email"></label>
@@ -27,8 +100,9 @@
 </form>
 
 
-<h1 class="center">Register</h1>
-<form asp-action="Register" asp-controller="Home" method="post">
+
+<form asp-action="Register" asp-controller="Home" method="post" class="form-align">
+    <h1>Register</h1>
     <div class="form-group">
         <span asp-validation-for="FirstName"></span>
         <label asp-for="FirstName"></label>
@@ -56,16 +130,8 @@
     </div><BR><BR>
     <input id="button" type="submit" value="Submit">
 </form>
+</div>
+    
 
-
-@{
-    @foreach(var user in ViewBag.allUsers)
-    {
-        @foreach(var kvp in user)
-        {
-            <h1>@kvp.Key @kvp.Value</h1>
-
-        }
-       
-    }
 }
+

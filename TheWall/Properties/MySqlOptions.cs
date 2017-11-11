@@ -1,4 +1,4 @@
-namespace newloginreg
+namespace TheWall
 {
     public class MySqlOptions
     {

@@ -40,13 +40,13 @@
 }
 
 .form-align {
-    width: 45%;
+    width: 49%;
     vertical-align: top;
     display: inline-block;
 }
 
 input {
-    width: 50%;
+    width: 80%;
 }
 input[value="Submit"] {width: 100px;margin-left: 0rem;}
 input[value="Login"] {width: 100px;margin-left: 0rem;}
@@ -59,7 +59,16 @@ button[value="Home"] {width: 100px;}
 p {
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 20%;
+
     vertical-align: top;
     font-style: italic;
 }
+
+
+#LogReg {
+   margin-left: 15%;
+
+}
+
+
+
