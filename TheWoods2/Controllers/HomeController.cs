@@ -14,7 +14,6 @@ using System.Linq;
 
 
 
-// using DbConnection;
 
 
 
@@ -43,13 +42,15 @@ namespace Woods.Controllers
            List<Trail> trails = _context.Trails.ToList();
             List_Trail existingtrails = new List_Trail(trails);
             return View(existingtrails);
+
+         
             
         }
 
 
         [HttpPost]
-        [Route("/Create")]
-        public IActionResult Create_Trail(MakeTrails  newtrail, int id)
+        [Route("Create")]
+        public IActionResult Create_Trail(MakeTrails  newtrail)
         {   
            if (ModelState.IsValid)
             {
@@ -65,6 +66,7 @@ namespace Woods.Controllers
                 };
 
                 _context.Add(newTrail);
+            
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -79,7 +81,7 @@ namespace Woods.Controllers
             return View("Add_Trail");
         }
         [HttpGet]
-        [Route("/trails/{id}")]
+        [Route("/{id}")]
         public IActionResult Trail(int id)
         {
             int Id = id;
