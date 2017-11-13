@@ -1,0 +1,46 @@
+
+@model DojoLeague.Models.MakeTrails
+@{
+    ViewData["Title"] = "DojoLeague";
+}
+
+<style>
+
+h1[value="Hike"] {color: rgb(34, 90, 91)}
+h3 {margin:1rem;padding:.5rem ; display: inline-block;vertical-align: top;color: rgb(34, 90, 91)}
+p {margin:1rem ;padding:.5rem ; }
+
+.contain {padding:0rem 2rem; width: 50rem;display: inline-block;}
+.form-group{display: inline-block; vertical-align: top;}
+</style>
+<div class="contain">
+
+
+<h1 value="Hike">@ViewBag.Trail.Trail_Name</h1>
+
+<div class="form-group">
+<h3>Description: </h3>
+<p>@ViewBag.Trail.Description</p>
+</div>
+
+<div class="form-group">
+<h3>Trail Length:</h3>
+<p>@ViewBag.Trail.Trail_Length miles</p>
+</div>
+
+<div class="form-group">
+<h3>Elevation:</h3>
+<p>@ViewBag.Trail.Elevation_Change ft</p>
+</div>
+
+<div class="form-group">
+<h3>Latitude: </h3>
+<p>@ViewBag.Trail.Latitude °</P>
+</div>
+
+<div class="form-group">
+<h3>Longitude: </h3>
+<p>@ViewBag.Trail.Longitude °</P>
+</div>
+
+</div>

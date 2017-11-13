@@ -1,0 +1,50 @@
+@model DojoLeague.Models.MakeTrails
+
+<style>
+    h1 {color: rgb(34, 90, 91);}
+
+
+</style>
+
+
+
+    
+
+ <h1>Add New Trail</h1>
+<!--  Trail Name, Description, Trail Length, Elevation Gain, Longitude and Latitude -->
+
+<form>
+    <span  asp-action="Create_Trail" asp-controller="Home" method="post"></span>
+    <div class="form-group">
+        <label asp-for="Trail_Name">Trail Name</label>
+        <input asp-for="Trail_Name">
+    </div>
+       <span asp-validation-for="Description"></span>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" value="(300 characters max)">
+    </div>
+        <span asp-validation-for="Trail_Length"></span>
+    <div class="form-group">
+        <label asp-for="Trail_Length">Trail Length (m)</label>
+        <input asp-for="Trail_Length">
+    </div>
+        <span asp-validation-for="Elevation_Change"></span>
+    <div class="form-group">
+        <label asp-for="Elevation_Change">Elevation Gain (ft)</label>
+        <input asp-for="Elevation_Change">
+    </div>
+        <span asp-validation-for="Latitude"></span>
+    <div class="form-group">
+        <label asp-for="Latitude">Latitude</label>
+        <input asp-for="Latitude">
+    </div>
+          <span asp-validation-for="Longitude"></span>
+    <div class="form-group">
+        <label asp-for="Longitude">Longitude</label>
+        <input asp-for="Longitude">
+    </div><BR><BR>
+    <input id="button" type="submit" value ="Submit">
+</form>
+
+

@@ -5,7 +5,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Woods.Models
+namespace DojoLeague.Models
 {
 
        public class Trail

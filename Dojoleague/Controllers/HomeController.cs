@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using Woods.Models;
+using DojoLeague.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -17,15 +17,15 @@ using System.Linq;
 
 
 
-namespace Woods.Controllers
+namespace DojoLeague.Controllers
 {   
     
       public class HomeController : Controller
     {
 
-        private readonly WoodsContext _context;
+        private readonly DojoLeagueContext _context;
  
-        public HomeController(WoodsContext context) //Constructor.
+        public HomeController(DojoLeagueContext context) //Constructor.
         //dependancy injection. 
         //Recieve configured and instantiated copy of my factory into my Controller constructor
         //and hold onto by setting it to the class level variable above (readonly)

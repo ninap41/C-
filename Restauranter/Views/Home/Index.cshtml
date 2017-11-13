@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model Restauranter.Models.Review
+<style>
+  
+.form_top {padding: 2rem;}
+tr {border-bottom:1px double aqua; width: 8rem;}
+.head {padding: 2rem;}
+   h1 {color: rgb(58, 129, 130);}
+   a{text-decoration: none}
+   input[value="Add Review"]{width:10re,;}
+
+    
+</style>
+
+
+<h1>Write a new Review:</h1>
+
+<form action="/Create_Review" method="POST">
+    <label for="Restaurant_Name">Restaurant Name:</label>
+    <input asp-for="Restaurant_Name" type="text" name="restaurant_name" ><br>
+    <span asp-validation-for="Restaurant_Name"></span><br>
+
+    <label for="Reviewer_Name">Reviewer Name: </label>
+    <input asp-for="Reviewer_Name" name="reviewer_name" type="text" ><br>
+    <span asp-validation-for="Reviewer_Name"></span><br>
+
+    <label for="Reviews">Review: </label><br>
+    <textarea asp-for="Reviews" name="reviews" rows="4" cols="50" ></textarea>
+    <span asp-validation-for="Reviews"></span><br>
+
+    <label for="Visit_Date">Date of Visit</label>
+    <input asp-for="Visit_Date" name="visit_date" type="date"><br>
+    <span asp-validation-for="Visit_Date"></span><br>
+
+
+    <label for="Rating">Stars:</label>
+    <select asp-for="Rating" name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br>
+    <span asp-validation-for="Rating"></span><br>
+
+    <input type="submit" value="Add Review">
+</form>'

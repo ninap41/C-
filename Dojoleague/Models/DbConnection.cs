@@ -5,7 +5,7 @@
 // using MySql.Data; 
 
  
-// namespace Woods 
+// namespace DojoLeague 
 // {
 //      public class DbConnector
 //     {

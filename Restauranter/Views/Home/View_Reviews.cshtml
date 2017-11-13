@@ -1,0 +1,29 @@
+
+@model Restauranter.Models.Review
+@{
+    ViewData["Title"] = "Restauranter";
+}
+
+
+
+<style>
+  
+.form_top {padding: 2rem;}
+tr {border-bottom:1px double aqua; width: 8rem;}
+.head {padding: 2rem;}
+   h1 {color: rgb(58, 129, 130);}
+   a{text-decoration: none}
+
+    
+</style>
+
+
+         
+         @foreach (var review in ViewBag.Reviews)
+{
+    <h3>Review for: @review.Restaurant_Name</h3>
+    <h4>Reviewer: @review.Reviewer_Name | visited on: @review.Visit_Date</h4>
+    <p>@review.Reviews</p>
+    <li>@review.Rating stars</li>
+    <hr>
+}
