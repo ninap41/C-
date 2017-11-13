@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using BankAccount.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore; //this is magic
+using System.Linq;
+namespace BankAccount.Controllers
+{   
+    
+      public class HomeController : Controller
+    {
+
+        private readonly BankAccountContext _context;
+ 
+        public HomeController(BankAccountContext context) //Constructor.
+        {
+              _context = context; 
+            
+        }
+  
+        // GET: /Home/
+        [HttpGet]
+        [Route("")]
+        public IActionResult Index()
+        {
+            //  List<Trail> allTrails = _context.Trails.OrderBy(t => t.Id).ToList();
+            // ViewBag.allTrails = allTrails;
+           return View();
+        }
+
+
+        [HttpPost]
+        [Route("Create_Trail")]
+        public IActionResult Create_Trail()
+        {   
+        //    if (ModelState.IsValid)
+        //     {
+        //         Trail newTrail= new Trail
+        //         {
+        //                      Trail_Name = model.Trail_Name,
+        //             Description = model.Description,
+        //             Trail_Length = model.Trail_Length,
+        //             Elevation_Change = model.Elevation_Change,
+        //             Latitude = model.Latitude,
+        //             Longitude = model.Longitude
+
+        //         };
+
+                
+                // _context.Add(newTrail);
+                // _context.SaveChanges();
+                // List<Trail> allTrails = _context.Trails.OrderBy(r => r.Trail_Name).ToList();
+                // ViewBag.Trails = allTrails;
+            //     return View("Index");
+            // }
+              return View("Index");  
+         }
+
+
+   
+        [HttpGet]
+        [Route("/{id}")]
+        public IActionResult Trail(int id)
+        {
+            // int Id = id;
+            // Trail thisTrail = _context.Trails.SingleOrDefault(t => t.Id == id);
+            // ViewBag.Trail = thisTrail;
+            return View();
+
+        }
+    }
+}   

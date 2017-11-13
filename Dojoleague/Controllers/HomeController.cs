@@ -8,15 +8,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
-using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore; //this is magic
 using System.Linq;
-
-
-
-
-
-
 namespace DojoLeague.Controllers
 {   
     
@@ -26,9 +19,6 @@ namespace DojoLeague.Controllers
         private readonly DojoLeagueContext _context;
  
         public HomeController(DojoLeagueContext context) //Constructor.
-        //dependancy injection. 
-        //Recieve configured and instantiated copy of my factory into my Controller constructor
-        //and hold onto by setting it to the class level variable above (readonly)
         {
               _context = context; 
             
@@ -39,60 +29,48 @@ namespace DojoLeague.Controllers
         [Route("")]
         public IActionResult Index()
         {
-           List<Trail> trails = _context.Trails.ToList();
-            List_Trail existingtrails = new List_Trail(trails);
-            return View(existingtrails);
-
-         
-            
+            //  List<Trail> allTrails = _context.Trails.OrderBy(t => t.Id).ToList();
+            // ViewBag.allTrails = allTrails;
+           return View();
         }
 
 
         [HttpPost]
-        [Route("Create")]
-        public IActionResult Create_Trail(MakeTrails  newtrail)
+        [Route("Create_Trail")]
+        public IActionResult Create_Trail()
         {   
-           if (ModelState.IsValid)
-            {
-                System.Console.WriteLine("You MAde It!");
+        //    if (ModelState.IsValid)
+        //     {
+        //         Trail newTrail= new Trail
+        //         {
+        //                      Trail_Name = model.Trail_Name,
+        //             Description = model.Description,
+        //             Trail_Length = model.Trail_Length,
+        //             Elevation_Change = model.Elevation_Change,
+        //             Latitude = model.Latitude,
+        //             Longitude = model.Longitude
 
-                MakeTrails newTrail = new MakeTrails
-                {
-                    Trail_Name = newtrail.Trail_Name,
-                    Description = newtrail.Description,
-                    Trail_Length = newtrail.Trail_Length,
-                    Elevation_Change = newtrail.Elevation_Change,
-                    Latitude = newtrail.Latitude,
-                    Longitude = newtrail.Longitude
-                 
-                };
+        //         };
 
-                _context.Add(newTrail);
-                System.Console.WriteLine("THE OBJECT SHOULD BE MADE HERE I AM CHEKC YOUR CODEAJKSDJKAHSDJKGALJKSDJAGSDGJASGDJAGSJDGLASGDJHG");
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-              return RedirectToAction("Index");  
+                
+                // _context.Add(newTrail);
+                // _context.SaveChanges();
+                // List<Trail> allTrails = _context.Trails.OrderBy(r => r.Trail_Name).ToList();
+                // ViewBag.Trails = allTrails;
+            //     return View("Index");
+            // }
+              return View("Index");  
          }
 
 
-        [HttpGet]
-        [Route("Add_Trail")]
-        public IActionResult Add_Trail()
-        {   
-            return View("Add_Trail");
-        }
-
-
-
-
+   
         [HttpGet]
         [Route("/{id}")]
         public IActionResult Trail(int id)
         {
-            int Id = id;
-            Trail thisTrail = _context.Trails.SingleOrDefault(t => t.Id == id);
-            ViewBag.Trail = thisTrail;
+            // int Id = id;
+            // Trail thisTrail = _context.Trails.SingleOrDefault(t => t.Id == id);
+            // ViewBag.Trail = thisTrail;
             return View();
 
         }

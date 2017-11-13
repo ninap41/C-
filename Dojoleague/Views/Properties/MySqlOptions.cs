@@ -1,4 +1,4 @@
-namespace DojoLeague
+namespace Restauranter
 {
     public class MySqlOptions
     {

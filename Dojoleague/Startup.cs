@@ -10,6 +10,11 @@ using MySQL.Data.EntityFrameworkCore.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 
+
+using Microsoft.AspNetCore;
+using Microsoft.EntityFrameworkCore; //entity
+
+
 namespace DojoLeague
 {
     public class Startup
@@ -20,11 +25,11 @@ namespace DojoLeague
             // Add framework services.
             services.AddMvc();
             services.AddSession();
-            services.AddDbContext<DojoLeagueContext>(options => options.UseMySQL((Configuration["DBInfo:ConnectionString"]))); //change depending on project
+            services.AddDbContext<DojoLeagueContext>(options => options.UseNpgsql(Configuration["DBInfo:ConnectionString"]));
+            // System.Data.Entity.Database.SetInitializer<MyPgSqlContext>(new MyDbContextDropCreateDatabaseAlways());
+            // services.AddDbContext<DojoLeagueContext>(options => options.UseMySQL((Configuration["DBInfo:ConnectionString"]))); //change depending on project
 
             // services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
-            // services.AddScoped<DbConnector>();
-            // services.AddScoped<DojoLeague.Factory.TrailFactory>();
 
         }
 

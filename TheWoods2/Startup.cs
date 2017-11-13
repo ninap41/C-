@@ -5,10 +5,11 @@ using Microsoft.Extensions.Logging;
 //
 
 using Woods.Models;
-using MySQL.Data.EntityFrameworkCore;
 using MySQL.Data.EntityFrameworkCore.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore; //entity
+
 
 namespace Woods
 {
@@ -20,11 +21,9 @@ namespace Woods
             // Add framework services.
             services.AddMvc();
             services.AddSession();
-            services.AddDbContext<WoodsContext>(options => options.UseMySQL((Configuration["DBInfo:ConnectionString"]))); //change depending on project
+        services.AddDbContext<WoodsContext>(options => options.UseNpgsql(Configuration["DBInfo:ConnectionString"]));
 
-            // services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
-            // services.AddScoped<DbConnector>();
-            // services.AddScoped<Woods.Factory.TrailFactory>();
+           
 
         }
 

@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@model Woods.Models.List_Trail
+@model Woods.Models.Trail
 <style>
   
 .form_top {padding: 2rem;}
@@ -29,7 +29,9 @@ tr {border-bottom:1px double aqua; width: 8rem;}
     <th>Latitude</th>
      <th>Longitude</th>
     </tr>
-     @foreach(var trail in Model.Trails)
+
+
+ @foreach(var trail in ViewBag.allTrails)
             {
                   <tr>
                     <td><a href="/@trail.Id">@trail.Trail_Name</a></td>
@@ -40,3 +42,7 @@ tr {border-bottom:1px double aqua; width: 8rem;}
                     <td>@trail.Longitude</td>
                 </tr>
             }
+
+
+
+
