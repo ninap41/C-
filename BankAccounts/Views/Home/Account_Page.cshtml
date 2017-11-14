@@ -1,0 +1,28 @@
+@model BankAccount.Models.Account
+<style>
+
+
+    input[value="deposit"]{width: 10rem;}
+     input[value="withdraw"]{width: 10rem;}
+</style>
+
+
+<div>
+<h1>Welcome To Your Account, @ViewBag.User! </h1>
+<h3>Your Current Balance: $@ViewBag.Balance .00</h3> 
+@{
+@if(TempData["NoMon"] != null){
+    @TempData["NoMon"]
+}
+}
+<form action="/Withdraw" method="post">
+	    <input name="Withdraw" type="number" placeholder="0.00">
+	    <input type="submit" step="any" class="Wide"  value="withdraw">
+</form>
+<form action="/Deposit" method="post">
+	    <input name="Deposit" type="number" placeholder="0.00">
+	    <input type="submit" step="any" class="Wide" value="deposit">
+</form>
+
+
+    </div>

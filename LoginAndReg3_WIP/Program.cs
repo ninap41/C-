@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace BankAccount
+namespace LoginAndReg3
 {
     public class Program
     {
@@ -12,6 +12,7 @@ namespace BankAccount
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
+
             host.Run();
         }
     }

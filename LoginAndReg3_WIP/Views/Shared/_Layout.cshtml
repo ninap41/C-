@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BankAccount</title>
+    <title>@ViewData["Title"] - LoginAndReg3</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
             asp-fallback-href="~/lib/skeleton/css/skeleton.css"
@@ -27,16 +27,21 @@
     <div class="container body-content">
 
 <div class="Nav">
-       <h1>Bank Accounts</h1>
-       <h3>Access Your Account</h3> 
+       <h1>Lost In The Woods</h1>
+       <h3>Trail Navigation</h3> 
         <a href="https://github.com/ninap41"><button value="hover" class="Wide_Butt">Github</button></a>
         <a asp-action="Index"><button value="hover" class="Wide_Butt">Home</button></a> 
-        @if(ViewBag.User != null){
-                    <a asp-action="Logout"><button value="hover" class="Wide_Butt">Logout</button></a> 
+        <a href="Add_Trail"><button value="hover" class="Wide_Butt">Add Trail</button></a> 
 
-        }
+
+
+
 
 </div>
+
+
+
+
         @RenderBody()
     </div>
         

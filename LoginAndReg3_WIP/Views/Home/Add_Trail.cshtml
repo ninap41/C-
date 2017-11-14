@@ -1,0 +1,52 @@
+
+@model LoginAndReg3.Models.Trail
+@{
+    ViewData["Title"] = "LoginAndReg3";
+}
+
+
+
+<style>
+  
+.form_top {padding: 2rem;}
+tr {border-bottom:1px double aqua; width: 8rem;}
+.head {padding: 2rem;}
+   h1 {color: rgb(58, 129, 130);}
+   a{text-decoration: none}
+
+    
+</style>
+
+
+         
+<h1>Add New Trail:</h1>
+
+<form action="Create_Trail" method="POST">
+    <label for="Trail_Name">Trail Name:</label>
+    <input asp-for="Trail_Name"  type="text" name="trail_name" ><br>
+    <span asp-validation-for="Trail_Name"></span><br>
+
+    <label for="Description">Description: </label>
+    <input asp-for="Description" name="description" type="text"  ><br>
+    <span asp-validation-for="Description"></span><br>
+
+    <label for="Trail_Length">Trail Length: </label><br>
+    <textarea asp-for="Trail_Length" step="any"name="Trail_Length" type="number"></textarea>
+    <span asp-validation-for="Trail_Length"></span><br>
+
+    <label for="Elevation_Change">Elevation Gain:</label>
+    <input asp-for="Elevation_Change"   name="Elevation_Change" type="number"><br>
+    <span asp-validation-for="Elevation_Change"></span><br>
+
+
+<label for="Latitude">Latitude</label>
+    <input asp-for="Latitude" step="any" name="Latitude" type="number"><br>
+    <span asp-validation-for="Latitude"></span><br>
+
+<label for="Longitude">Longitude</label>
+    <input asp-for="Longitude" step="any" name="longitude" type="number"><br>
+    <span asp-validation-for="Longitude"></span><br>
+
+
+    <input type="submit" value="Add Trail">
+</form>
