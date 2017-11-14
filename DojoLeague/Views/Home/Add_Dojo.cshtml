@@ -1,0 +1,36 @@
+@model DojoLeague.Models.Dojo
+<style>
+
+
+
+    input[value="Add Dojo"]{width: 10rem;}
+</style>
+
+  
+<div class="Column">
+<h1>Register a Dojo:</h1>
+
+<form action="Create_Dojo" method="POST">
+  
+        <label for="Name">Dojo Name:</label>
+    <input asp-for="Name"  type="text" name="Name" ><br>  <br>  
+   
+    <span asp-validation-for="Name"></span><br><br>  
+
+<label for="Location">Dojo Info: </label>
+  <select asp-for="Location"  type="text" name="Location" >
+        <option value="Chicago Dojo">Chicago Dojo</option>
+         <option value="Seattle Dojo">Seattle Dojo</option>
+        <option value="Silicon Valley Dojo">Silicon Valley Dojo</option>
+        <option value="Washington DC Dojo">Washington DC Dojo</option>
+        <option value="Dallas Dojo">Dallas Dojo</option>
+    </select><br>    
+    <span asp-validation-for="Location"></span><br>
+
+
+ <label for="AddlInfo">Dojo Info: </label>
+    <input asp-for="AddlInfo" name="addlinfo" type="text"  ><br>
+    <span asp-validation-for="AddlInfo"></span><br><br>
+    <input type="submit" value="Add Dojo">
+</form>
+</div>

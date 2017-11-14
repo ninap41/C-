@@ -23,54 +23,139 @@ namespace DojoLeague.Controllers
               _context = context; 
             
         }
+
+        bool DirectMe = false;
   
         // GET: /Home/
         [HttpGet]
         [Route("")]
         public IActionResult Index()
+
         {
-            //  List<Trail> allTrails = _context.Trails.OrderBy(t => t.Id).ToList();
-            // ViewBag.allTrails = allTrails;
+            
+            List<Ninja> allNinjas = _context.Ninjas.OrderBy(t => t.Id).ToList();
+            ViewBag.allNinjas = allNinjas;
            return View();
+        }
+
+        [HttpGet]
+        [Route("/Dojos")]
+        public IActionResult Dojos(){
+            List<Dojo> Dojos = _context.Dojos.ToList();
+            List<Ninja> Ninjas = _context.Ninjas.ToList();
+
+            Wrapper model = new Wrapper(Ninjas, Dojos);
+           
+            // List<Dojo> allDojos = _context.Dojos.OrderBy(t => t.Id).ToList();
+            // ViewBag.allDojos = allDojos;
+
+            return View(model);
+        }
+
+        [HttpGet]
+        [Route("Add_Dojo")]
+        public IActionResult Add_Dojo(){
+        
+           
+            
+                
+           
+            return View();
         }
 
 
         [HttpPost]
-        [Route("Create_Trail")]
-        public IActionResult Create_Trail()
-        {   
-        //    if (ModelState.IsValid)
-        //     {
-        //         Trail newTrail= new Trail
-        //         {
-        //                      Trail_Name = model.Trail_Name,
-        //             Description = model.Description,
-        //             Trail_Length = model.Trail_Length,
-        //             Elevation_Change = model.Elevation_Change,
-        //             Latitude = model.Latitude,
-        //             Longitude = model.Longitude
+        [Route("Create_Dojo")]
+        public IActionResult Create_Dojo(Dojo model)
+        {  
+       
+        if (ModelState.IsValid)
+            {
+          
+                Dojo newDojo= new Dojo
+                {
+                    Name = model.Name,
+                    Location= model.Location,
+                    AddlInfo = model.AddlInfo,
+                };
 
-        //         };
+                 if(TryValidateModel(newDojo) == false){
 
+                    ViewBag.ModelFields = ModelState.Values;
+                    List<Ninja> Ninjas = _context.Ninjas.OrderBy(t => t.Id).ToList();
+                    ViewBag.allNinjas = Ninjas;
+                    return View();
+                }
+                else{
+                _context.Add(newDojo);
+                _context.SaveChanges();
+                List<Ninja> Ninjas = _context.Ninjas.OrderBy(t => t.Id).ToList();
+                ViewBag.allNinjas= Ninjas;
+                // ViewBag.newdojo = newDojo.Name;
+                return View("Index");
                 
-                // _context.Add(newTrail);
-                // _context.SaveChanges();
-                // List<Trail> allTrails = _context.Trails.OrderBy(r => r.Trail_Name).ToList();
-                // ViewBag.Trails = allTrails;
-            //     return View("Index");
-            // }
+                }
+                return View("Index");
+            }
+          
+             
+              return View("Add_Dojo");  
+         }
+
+        [HttpPost]
+        [Route("Create_Ninja")]
+        public IActionResult Create_Ninja(Ninja model)
+        {   
+           if (ModelState.IsValid)
+            {
+                Ninja newNinja= new Ninja
+                {
+                    Name = model.Name,
+                    Level= model.Level,
+                    DojoName= model.DojoName,
+                    Description = model.Description,
+                };
+                
+                if(TryValidateModel(newNinja) == false){
+
+                    ViewBag.ModelFields = ModelState.Values;
+                    List<Ninja> Ninjas = _context.Ninjas.OrderBy(t => t.Id).ToList();
+                    ViewBag.allNinjas = Ninjas;
+                    return View();
+                }
+                
+                _context.Add(newNinja);
+                _context.SaveChanges();
+                List<Ninja> allNinjas = _context.Ninjas.OrderBy(t => t.Id).ToList();
+                ViewBag.allNinjas = allNinjas;
+                return View("Index");
+            }
               return View("Index");  
          }
 
 
+
    
         [HttpGet]
-        [Route("/{id}")]
-        public IActionResult Trail(int id)
+        [Route("/ninja/{id}")]
+        public IActionResult Single_Ninja(int id)
         {
-            // int Id = id;
-            // Trail thisTrail = _context.Trails.SingleOrDefault(t => t.Id == id);
-            // ViewBag.Trail = thisTrail;
+            int Id = id;
+            Ninja thisNinja = _context.Ninjas.SingleOrDefault(t => t.Id == id);
+            ViewBag.Ninja= thisNinja;
+            return View();
+
+        }
+
+          [HttpGet]
+        [Route("/dojo/{id}")]
+        public IActionResult Single_Dojo(int id)
+        {
+            int Id = id;
+            Dojo thisDojo = _context.Dojos.SingleOrDefault(d => d.Id == (int)Id);
+            List<Ninja> ninjas = _context.Ninjas.ToList();
+            ViewBag.Dojo= thisDojo;
+            ViewBag.Ninjas= ninjas;
             return View();
 
         }

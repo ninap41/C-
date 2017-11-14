@@ -1,0 +1,52 @@
+@model DojoLeague.Models.Wrapper
+
+
+
+
+ <style>
+.form_top {padding: 2rem;}
+tr {border-bottom:1px double aqua; width: 7rem;}
+.head {padding: 2rem;}
+   h1 {color: rgb(70, 58, 130);}
+a{text-decoration: none}
+input[value="Add Ninja"]{width:10rem;}
+.Column {width:45%; vertical-align:top; display:inline-block;border: 1px solid rgb(70, 58, 130); padding: 2rem; }
+
+    button[value="createdojo"]{width: 15rem;}
+</style>
+
+
+
+<div class="Column">
+ <h1>Registered Dojos:</h1>
+<table class="Padding_Please">
+    <tr>
+    
+    <th>Dojo Name:</th>
+    <th>Dojo Location</th>
+    <th>Dojo Info:</th>   
+    </tr>
+
+
+
+
+       @foreach(var dojo in Model.Dojos)
+            {
+                  <tr>
+                    <td><a href="/dojo/@dojo.Id">@dojo.Name</a></td>
+                    <td>@dojo.Location</td>
+                    <td>@dojo.AddlInfo</td>
+                </tr>
+            }
+
+
+
+</table>
+</div>
+
+
+            <a asp-action="Add_Dojo"><button value="createdojo" class="Wide_Butt">Create a Dojo</button></a> 
+
+
+
+

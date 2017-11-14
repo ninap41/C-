@@ -1,0 +1,38 @@
+@model DojoLeague.Models.Ninja
+
+<style>
+
+h1[value="Hike"] {color: rgb(34, 90, 91)}
+h3 {margin:1rem;padding:.5rem ; display: inline-block;vertical-align: top;color: rgb(34, 90, 91)}
+p {margin:1rem ;padding:.5rem ; }
+
+.contain {padding:0rem 2rem; width: 50rem;display: inline-block;}
+.form-group{display: inline-block; vertical-align: top;}
+</style>
+<div class="contain">
+
+
+
+<div class="form-group">
+<h3>Name: </h3>
+<p>@ViewBag.Ninja.Name</p>
+</div>
+
+<div class="form-group">
+<h3>Ninja Level:</h3>
+<p>@ViewBag.Ninja.Level</p>
+</div>
+
+<div class="form-group">
+<h3>Dojo Name:</h3>
+<p>@ViewBag.Ninja.DojoName </p>
+</div>
+
+<div class="form-group">
+<h3>Description: </h3>
+<p>@ViewBag.Ninja.Description</P>
+</div>
+
+
+
+</div>

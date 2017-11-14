@@ -1,30 +1,114 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-@model DojoLeague.Models.Dojo
+@model DojoLeague.Models.Ninja
+
+
+
 <style>
   
 .form_top {padding: 2rem;}
-tr {border-bottom:1px double aqua; width: 8rem;}
+tr {border-bottom:1px double aqua; width: 7rem;}
 .head {padding: 2rem;}
-   h1 {color: rgb(58, 129, 130);}
-   a{text-decoration: none}
-   input[value="Add Review"]{width:10re,;}
-
+   h1 {color: rgb(70, 58, 130);}
+a{text-decoration: none}
+input[value="Add Ninja"]{width:10rem;}
+.Column {width:45%; vertical-align:top; display:inline-block;border: 1px solid rgb(70, 58, 130); padding: 2rem; }
+button[value="Wide"]{ width: 20rem;}
     
 </style>
 
- <h1>Registered Ninjas:</h1>
-    <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th>Ninja Name</th>
-                <th>Home Dojo</th>
-            </tr>
-        </thead>
-        <tbody> -->
-            </tr>
-            }
-        </tbody>
-    </table>
+  @if(ViewBag.newdojo != null){
+        <legend>You Have SuccessFully Registered A Dojo ViewBag.newdojo</legend>
 }
+
+<div class="Column">
+ <h1>Registered Ninjas:</h1>
+<table class="Padding_Please">
+    <tr>
+    
+    <th>Name</th>
+    <th>Ninja Level</th>
+    <th>Dojo Name</th>
+    <th>Ninja Description </th>
+  
+    
+    </tr>
+    @{
+          @if(ViewBag.allNinjas == null){
+
+    <a asp-action="Index"><button value="Wide" class="Wide_Butt">Refresh For Ninjas</button></a> 
+
+    }
+
+    
+@if(ViewBag.allNinjas != null)
+
+{
+
+   @foreach(var ninja in ViewBag.allNinjas)
+            {
+                  <tr>
+                    <td><a href="/ninja/@ninja.Id">@ninja.Name</a></td>
+                    <td>@ninja.Level</td>
+
+                     <td>@ninja.DojoName</td>
+                    <td>@ninja.Description</td>
+                </tr>
+            }
+    }
+
+    }
+
+    
+
+
+
+  
+
+
+</table>
+</div>
+
+<div class="Column">
+<h1>Register a Ninja:</h1>
+
+<form action="Create_Ninja" method="POST">
+    <label for="Name">Name:</label>
+    <input asp-for="Name"  type="text" name="name" ><br>
+    <span asp-validation-for="Name"></span><br>
+
+    <label for="Level">Ninja Level:</label>
+    <select asp-for="Level" name="level">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+         <option value="6">6</option>
+        <option value="7">7</option>
+         <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select><br>
+    <span asp-validation-for="Level"></span><br>
+   
+        <label for="DojoName">Dojo Name:</label>
+    <select asp-for="DojoName"  type="text" name="dojoName" >
+        
+        <option value="Chicago Dojo">Chicago Dojo</option>
+         <option value="Seattle Dojo">Seattle Dojo</option>
+        <option value="Silicon Valley Dojo">Silicon Valley Dojo</option>
+        <option value="Washington DC Dojo">Washington DC Dojo</option>
+        <option value="Dallas Dojo">Dallas Dojo</option>
+
+    </select><br>
+    <span asp-validation-for="DojoName"></span><br>
+
+ <label for="Description">Ninja Description: </label>
+    <input asp-for="Description" name="description" type="text"  ><br>
+    <span asp-validation-for="Description"></span><br>
+
+    <input type="submit" value="Add Ninja">
+</form>
+</div>

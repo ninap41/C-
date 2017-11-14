@@ -14,7 +14,9 @@ namespace DojoLeague.Models
 
         [Required(ErrorMessage="You must enter a location")]
         public string Location { get; set; }
-
+   
+   
+        [Required(ErrorMessage="Info required.")]
         public string AddlInfo { get; set; }
 
     }

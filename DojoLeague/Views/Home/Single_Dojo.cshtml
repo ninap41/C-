@@ -1,0 +1,68 @@
+@model DojoLeague.Models.Wrapper
+
+<style>
+
+h1[value="Hike"] {color: rgb(34, 90, 91)}
+h3 {margin:1rem;padding:.5rem ; display: inline-block;vertical-align: top;color: rgb(34, 90, 91)}
+p {margin:1rem ;padding:.5rem ; }
+
+.Column {width:45%; vertical-align:top; display:inline-block;border: 1px solid rgb(70, 58, 130); padding: 2rem; }
+.form-group{display: inline-block; vertical-align: top;}
+</style>
+
+
+<div class="Column">
+
+<div class="form-group">
+<h3>Name: </h3>
+<p>@ViewBag.Dojo.Name</p>
+</div>
+
+<div class="form-group">
+<h3>Location:</h3>
+<p>@ViewBag.Dojo.Location</p>
+</div>
+
+<div class="form-group">
+<h3>Info: </h3>
+<p>@ViewBag.Dojo.AddlInfo</P>
+</div>
+
+</div>
+
+
+
+<div class="Column">
+ <h1>Registered Ninjas:</h1>
+
+<table class="Padding_Please">
+    <tr>
+    <th>Name</th>
+<th>Ninja Level</th> 
+    <th>Dojo Name</th>
+    <th>Ninja Description </th>  
+    </tr>
+    
+
+
+
+    @foreach(var ninja in @ViewBag.Ninjas)
+        {
+            if(ninja.DojoName == ViewBag.Dojo.Location)
+            {
+                <tr>
+                    <td>@ninja.Name</td>
+                     <td>@ninja.Level</td>
+                </tr>
+            }
+        }
+    
+
+</table>
+</div>
+
+
+
+
+
+
