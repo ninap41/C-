@@ -1,0 +1,53 @@
+@model loginRegBoiler.Models.Wrapper
+
+<style>
+
+h1[value="Hike"] {color: rgb(34, 90, 91)}
+h3 {margin:1rem;padding:.5rem ; display: inline-block;vertical-align: top;color: rgb(34, 90, 91)}
+p {margin:1rem ;padding:.5rem ; }
+
+.contain {padding:0rem 2rem; width: 55rem;display: inline-block;}
+.form-group{display: inline-block; vertical-align: top;}
+</style>
+<div class="contain">
+
+
+<h1 value="Hike"> "The Marriage of @ViewBag.Wedding.WedderOne and @ViewBag.Wedding.WedderTwo "</h1>
+
+
+<div class="form-group">
+<h3>Save The DATE:<BR> @ViewBag.Wedding.Date.ToString("D")</h3>
+
+</div>
+<div class="form-group">
+<h3>Host: @ViewBag.Wedding.HostName</h3>
+
+</div>
+
+
+<!-- 
+@if(TempData["Success"] != null){
+    <BR><h3>@TempData["Success"]</h3>
+}
+
+@if(ViewBag.Guests != null)
+{
+    
+@foreach(var guest in ViewBag.Guests){
+        <ul>
+        <li>@guest.User.First_Name</li>
+        </ul>
+   }
+
+}
+
+
+<BR>
+@if(ViewBag.Wedding.HostId == ViewBag.User.UsersId){
+<a href="/delete/@ViewBag.Wedding.Id"><button value="hover" class="Wide_Butt">Delete</button></a> 
+}
+may not work look at this in  SINGLE WEDDING ID ROUTE -->
+
+</div>
+
+</div>
