@@ -8,8 +8,8 @@ using BankAccount.Models;
 namespace BankAccounts.Migrations
 {
     [DbContext(typeof(BankAccountContext))]
-    [Migration("20171114170132_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20171114183727_YourMigrationName")]
+    partial class YourMigrationName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,22 @@ namespace BankAccounts.Migrations
                     b.HasKey("AccountsId");
 
                     b.ToTable("Accounts");
+                });
+
+            modelBuilder.Entity("BankAccount.Models.Transaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Amount");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("BankAccount.Models.User", b =>

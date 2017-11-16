@@ -10,7 +10,8 @@ namespace BankAccount.Models
         public int AccountsId{ get; set; }
         public double Balance { get; set; }
 
-
+        
         
     }
+    
 }

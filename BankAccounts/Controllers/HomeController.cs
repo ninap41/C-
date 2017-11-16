@@ -31,9 +31,7 @@ namespace BankAccount.Controllers
 
         {
             List<User> AllUsers = _context.Users.ToList();
-
-            //  List<Trail> allTrails = _context.Trails.OrderBy(t => t.Id).ToList();
-            // ViewBag.allTrails = allTrails;
+            
            return View();
         }
 
@@ -93,6 +91,16 @@ namespace BankAccount.Controllers
 	                ViewBag.User = thisuser;
 	                User currentUser = _context.Users.SingleOrDefault(user => user.UsersId == (int)userID); //creates current user account with matching Id to transferred over RegisterUser Object
 	                Account userAccount = _context.Accounts.SingleOrDefault(acc => acc.AccountsId == currentUser.AccountsID); // matches accounts to user by AccountsID attribute
+                    // .where()
+
+                    //                 List<Account> allChanges = _context.AccountChanges.
+
+                    // List<Transaction> allTransactions = _context.Transactions.Include(a => a.AccountsId).ToList();
+                    // ViewBag.allTransactions = allTransactions;
+                    // Wrapper model = new Wrapper(Users, transactions, userAccount);
+
+
+
 	                ViewBag.Balance = userAccount.Balance; //keeps track of their balance on the page.
 	                return View("Account_Page");
 	            }
@@ -109,7 +117,7 @@ namespace BankAccount.Controllers
                     TempData["EmailError"] = "Invalid email!";
                     return RedirectToAction("Index");
                 }
-                
+            
                 else
                 {
                     PasswordHasher<User> hasher = new PasswordHasher<User>();
@@ -130,7 +138,7 @@ namespace BankAccount.Controllers
 
         [HttpPost]
         [Route("Deposit")]
-        public IActionResult Deposit(int Deposit)
+        public IActionResult Deposit(int Deposit,Transaction model)
         {
             int? userID = HttpContext.Session.GetInt32("UserID");
 
@@ -139,6 +147,9 @@ namespace BankAccount.Controllers
                 return RedirectToAction("Index");
             }
             else{
+
+                
+
                 User currentUser = _context.Users.SingleOrDefault(user => user.UsersId == (int)userID);
                 Account userAccount = _context.Accounts.SingleOrDefault(acc => acc.AccountsId == currentUser.AccountsID);
                 userAccount.Balance += Deposit;
@@ -175,9 +186,6 @@ namespace BankAccount.Controllers
           }
             
         }
-
-
-
 
 
 

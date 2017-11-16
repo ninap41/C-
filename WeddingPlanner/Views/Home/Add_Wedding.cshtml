@@ -1,0 +1,27 @@
+@model WeddingPlanner.Models.Wedding
+
+<style>
+input[value="Add Wedding"]{width: 12rem;}
+
+
+</style>
+<h1>Add Wedding</h1>
+<form action="Create_Wedding" method="POST">
+     <label for="WedderOne">Wedder One: </label>
+    <input asp-for="WedderOne" name="WedderOne" type="text"  ><br>
+    <span asp-validation-for="WedderOne"></span><br><br>
+
+     <label for="WedderTwo">Wedder Two: </label>
+    <input asp-for="WedderTwo" name="WedderTwo" type="text"  ><br>
+    <span asp-validation-for="WedderTwo"></span><br><br>
+
+    <label for="Date">Date: </label>
+    <input asp-for="Date" name="Date" type="date"  ><br>
+    <span asp-validation-for="Date"></span><br><br>
+
+    <label for="Address">Address: </label>
+    <input asp-for="Address" name="Address" type="text"  ><br>
+    <span asp-validation-for="Address"></span><br><br>
+        <input type="submit" value="Add Wedding">
+
+</form>

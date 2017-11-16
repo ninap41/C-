@@ -1,0 +1,101 @@
+@model WeddingPlanner.Models.Wrapper
+<style>
+
+    .Column{ width: 40%; display: inline-block;vertical-align: top; margin-left: 20%;}
+     button[value="Wide_Butt"]{width: 12rem; margin-left: 20rem;}
+</style>
+
+
+
+    <BR>
+
+<div class="Column">
+        @{
+            if(TempData["Success"] != null)
+            {
+                    @TempData["Success"]
+            }
+    }
+
+      @{
+            if(TempData["LEAVERSVP"] != null)
+            {
+                    @TempData["LEAVERSVP"]
+            }
+    }
+<table class="Padding_Please" value="Squish">
+    <tr>
+    <th>Bride and Groom</th>
+    <th>Date</th>
+    <th>Host</th>
+    <th># Guests</th>
+     <th>Address</th>
+    <th>Action</th>
+
+
+@{
+
+@if(Model != null){
+@foreach(var wedding in ViewBag.Weddings)
+    {
+        <tr>    
+                    <td><a href="/@wedding.Id">@wedding.WedderOne & @wedding.WedderTwo</a></td> 
+                     <td>@wedding.Date.ToString("D")</td> 
+                     <td>@wedding.HostName</td>  
+                      <td>@wedding.Guests.Count</td>    
+                    <td>@wedding.Address</td> 
+            
+             
+                      @foreach(var guest in @wedding.Guests){
+                      
+                      @if(guest.User.UsersId == ViewBag.IdOfUser.UsersId ){
+                                          <td><a href="/leave_guest/@wedding.Id">UN-RSVP</a></td> 
+
+                        }
+                else {
+                        <td><a href="/add_guest/@wedding.Id">RSVP</a></td> <BR>
+
+                    }
+                
+                }
+  
+ </tr>   
+         }
+
+    }
+}
+   
+
+     @{
+                if(TempData["UserError"] != null){
+                        @TempData["UserError"]
+                }
+            }
+
+  @{
+            if(TempData["WeddingError"] != null)
+            {
+                    @TempData["WeddingError"]
+            }
+    }
+
+   
+</table>
+</div>
+<br>
+
+<div class="Column">
+        <a href="/Add_Wedding"><button value="Wide_Butt">Add Wedding</button></a> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

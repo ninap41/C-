@@ -28,6 +28,22 @@ namespace BankAccounts.Migrations
                     b.ToTable("Accounts");
                 });
 
+            modelBuilder.Entity("BankAccount.Models.Transaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Amount");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Transactions");
+                });
+
             modelBuilder.Entity("BankAccount.Models.User", b =>
                 {
                     b.Property<int>("UsersId")

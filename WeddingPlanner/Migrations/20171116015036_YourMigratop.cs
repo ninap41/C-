@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BankAccounts.Migrations
+namespace WeddingPlanner.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class YourMigratop : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BankAccount.Models
+namespace WeddingPlanner.Models
 {
     public class RegisterUser : BaseEntity
     {
