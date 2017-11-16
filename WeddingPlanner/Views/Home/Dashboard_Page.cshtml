@@ -1,4 +1,5 @@
 @model WeddingPlanner.Models.Wrapper
+@using WeddingPlanner.Models
 <style>
 
     .Column{ width: 40%; display: inline-block;vertical-align: top; margin-left: 20%;}
@@ -36,7 +37,7 @@
 @{
 
 @if(Model != null){
-@foreach(var wedding in ViewBag.Weddings)
+@foreach(Wedding wedding in ViewBag.Weddings)
     {
         <tr>    
                     <td><a href="/@wedding.Id">@wedding.WedderOne & @wedding.WedderTwo</a></td> 
@@ -46,9 +47,10 @@
                     <td>@wedding.Address</td> 
             
              
-                      @foreach(var guest in @wedding.Guests){
+                
                       
-                      @if(guest.User.UsersId == ViewBag.IdOfUser.UsersId ){
+                      @if(wedding.Guests.Any(i=> i.GuestId == ViewBag.UserId))
+                      {
                                           <td><a href="/leave_guest/@wedding.Id">UN-RSVP</a></td> 
 
                         }
@@ -57,7 +59,7 @@
 
                     }
                 
-                }
+                
   
  </tr>   
          }

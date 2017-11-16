@@ -142,8 +142,12 @@ namespace WeddingPlanner.Controllers
             else
             {
             User currentUser = _context.Users.SingleOrDefault(user => user.UsersId == (int)userID);
-            Wedding thisWedding = _context.Weddings.SingleOrDefault(t => t.Id == id);
-        List<Guest> guests = _context.Guests.Where(g => g.WeddingId == (int)id).Include(g => g.User).ToList(); // is used when Id/any attribute is passing through top
+            Wedding thisWedding = _context.Weddings.SingleOrDefault(t => t.Id == id); //all guests in this wedding
+            List<Guest> guests = _context.Guests.Where(g => g.WeddingId == (int)id).Include(g => g.User).ToList(); 
+            // anytime you want a list with multiple objects WHere list through many things and .tolist
+            //single 
+
+
             // gets current userID fr session
             //gets Current wedding
             //gets guest list for page. 
@@ -224,8 +228,8 @@ namespace WeddingPlanner.Controllers
     }
 
      [HttpGet]
-    [Route("leave_guest/{GuestId}")] //Wedding GUEST ID ATT
-    public IActionResult Delete_RSVP(int GuestId)
+    [Route("leave_guest/{Id}")] //Wedding GUEST ID ATT
+    public IActionResult Delete_RSVP(int Id)
     { //Wedding OBJECT. Wedding.GuestId
             //All coming from the WEdding model 
             int? userID = HttpContext.Session.GetInt32("UserID");
@@ -235,12 +239,18 @@ namespace WeddingPlanner.Controllers
             }
 
             else{
+            Wedding thiswedding =_context.Weddings.SingleOrDefault(Wed =>Wed.Id == (int)Id);
             User currentUser = _context.Users.SingleOrDefault(user => user.UsersId == (int)userID);
             ViewBag.UserId = currentUser; //Plugs in the User ID
+
             // Wedding thisWedding = _context.Weddings.SingleOrDefault(var => var.Id == (int)id);
-            Guest thisGuest = _context.Guests.SingleOrDefault(x => x.id == (int)GuestId);
+            // Guest thisGuest = _context.Guests.SingleOrDefault(x => x.GuestId == (int)Id);
+            List<Guest> thisweddingguests = _context.Guests.Where(x => x.WeddingId == (int)Id).ToList();
+            Guest singleguest = thisweddingguests.SingleOrDefault(sg => sg.GuestId == ViewBag.UserId.UsersId);
+            
+
             TempData["LEAVERSVP"]= "You Will Now Not Be Attending The Wedding";
-            _context.Remove(thisGuest);
+            _context.Remove(singleguest);
             _context.SaveChanges();
             return RedirectToAction("Dashboard_Page");
             }
