@@ -1,0 +1,49 @@
+@model BeltExam.Models.RegisterUser
+
+<style>
+input[value="Add Wedding"]{width: 12rem;}
+    .Column {margin-left: 10rem;width:35%; vertical-align:top; display:inline-block; }
+    label,input,span {margin-top:0px auto;margin-bottom:0px auto;}
+    button[value="Wide_Butt"]{width: 10rem;}
+    tr {border-bottom:1px double aqua; width: 8rem;}
+  .head {padding: 2rem;}
+    h1 {color: rgb(58, 129, 130);}
+    a{text-decoration: none}
+
+    
+</style>
+
+<div class="Column">
+ <h1>Register</h1>
+<form action="Create_User" method="POST">
+
+      <label for="User_Level">UserLevel: </label>
+    <input asp-for="User_Level" name="User_Level" type="text"><br>
+           <option value="Admin">Admin</option>
+        <option value="Normal">Normal</option>
+    <span asp-validation-for="User_Level"></span><br>
+
+    <label for="First_Name">First Name: </label>
+    <input asp-for="First_Name" name="First_Name" type="text"><br>
+    <span asp-validation-for="First_Name"></span><br>
+
+    <label for="Last_Name">Last Name: </label>
+    <input asp-for="Last_Name" name="Last_Name" type="text"><br>
+    <span asp-validation-for="Last_Name"></span><br>
+
+    <label for="Email">Email: </label>
+    <input asp-for="Email" name="Email" type="email"><br>
+    <span asp-validation-for="Email"></span><br>
+
+
+    <label for="Password">Password: </label>
+    <input asp-for="Password" aria-describedby="passwordHelp" name="Password" type="password"><br>
+    <span asp-validation-for="Password"></span><br>
+    
+    <label for="Confirm_Password">Confirm Password: </label>
+    <input asp-for="Confirm_Password"  aria-describedby="passwordHelp" name="Confirm_Password" type="password"><br>
+    <span asp-validation-for="Confirm_Password"></span><br>
+        
+    <button type="submit"value="Wide_Butt">Register</button>
+</form>
+</div>

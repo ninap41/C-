@@ -11,16 +11,14 @@
 <h1>Register a Dojo:</h1>
 
 <form action="Create_Dojo" method="POST">
-  
-        <label for="Name">Dojo Name:</label>
+    <label for="Name">Dojo Name:</label>
     <input asp-for="Name"  type="text" name="Name" ><br>  <br>  
-   
     <span asp-validation-for="Name"></span><br><br>  
 
 <label for="Location">Dojo Info: </label>
   <select asp-for="Location"  type="text" name="Location" >
         <option value="Chicago Dojo">Chicago Dojo</option>
-         <option value="Seattle Dojo">Seattle Dojo</option>
+        <option value="Seattle Dojo">Seattle Dojo</option>
         <option value="Silicon Valley Dojo">Silicon Valley Dojo</option>
         <option value="Washington DC Dojo">Washington DC Dojo</option>
         <option value="Dallas Dojo">Dallas Dojo</option>

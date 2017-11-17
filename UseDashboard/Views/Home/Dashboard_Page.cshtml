@@ -1,0 +1,128 @@
+@model BeltExam.Models.Wrapper
+@using BeltExam.Models
+<style>
+
+    .Column{ width: 40%; display: inline-block;vertical-align: top; margin-left: 2%}
+     button[value="Wide_Butt"]{width: 12rem; margin-left: 20rem;}
+         h1 {color: rgb(58, 129, 130);}
+             button[value="Wide_Butt"]{width: 10rem;}
+        h4{margin-left:80%; width: 40rem;color: pink;}
+table{width: 75rem;}
+</style>
+
+
+    <BR>
+
+<div class="Column">
+        @{
+            @if(TempData["Success"] != null)
+            {
+                    <span><h4> @TempData["Success"]</h4></span>
+            }
+    }
+        @{
+            @if(TempData["Created_User1"]  != null || TempData["Created_User2"]!= null)
+            {
+                   <span><h4>@TempData["Created_User1"] @ViewBag.UserName! @TempData["Created_User2"]</h4></span>
+            }
+    }
+    
+      @{
+            @if(TempData["Deleted"] != null)
+            {
+                     <span><h4>@TempData["Deleted"]</h4></span>
+            }
+    }
+    @{
+
+@if( TempData["MEsDL"] != null)
+{
+   <span><h4>@TempData["MEsDL"]</h4></span>
+
+}
+}
+
+@if(ViewBag.IdOfUser.UsersId != null){
+
+@if(ViewBag.IdOfUser.User_Level == "Admin"){
+               <h3>Manage Users</h3>
+            }
+            else{
+                <h3>All Users</h3>
+            }
+    }
+
+<table class="Padding_Please" value="Squish">
+    <tr>
+
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Created At</th>
+     <th>User_Level</th>
+    <th>Take Action!?</th>
+    </tr>
+
+</tr>
+     @foreach(User user in ViewBag.allUsers)
+     {
+    
+                    <tr><td>@user.UsersId</td>
+                     <td><a href="/profile/@user.UsersId">@user.First_Name @user.Last_Name</a></td> 
+                     <td>@user.Email</td>  
+                      <td>@user.Created_at.ToString("D")</td>    
+     
+            @if(user.User_Level == "Admin" ){
+                <td>Admin</td>  
+            }
+            else {
+                 <td>Normal</td>  
+            }
+
+            @if(ViewBag.IdOfUser.User_Level == "Admin"){
+                 <td><a href="/edit_profile/@user.UsersId">Edit</a> / 
+                 <a href="/remove_profile/@user.UsersId">Remove</a></td>  
+            }
+            
+            else{
+                @if(ViewBag.IdOfUser.UsersId == @user.UsersId || ViewBag.IdOfUser.User_Level == "Admin"){
+                <td><a href="/edit_profile/@user.UsersId">Edit Profile</a></td>  
+                }
+                else{
+                    <td><a href="/profile/@user.UsersId">View Profile</a></td>  
+                }
+            }
+             </tr>  
+
+
+
+     }
+                    
+           
+                    </tr>
+
+
+
+<br>
+<BR>
+<!-- <div class="Column">
+        <a href="/Add_User"><button value="Wide_Butt">Add User</button></a> 
+</div> -->
+</table>
+@{
+     @if(ViewBag.IdOfUser.User_Level == "Admin")
+     {
+            <a href="Add_User"><button value="hover" class="Wide_Butt">Add User</button></a> 
+        }
+}
+            
+
+
+
+
+
+
+
+
+
+

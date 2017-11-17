@@ -1,0 +1,126 @@
+@model BeltExam.Models.Wrapper
+@using BeltExam.Models
+<style>
+    .Message_Contain{padding:2rem; border: 1px solid grey;}
+    .Wider_Butt{ width: 30rem;}
+    input[value="Post Message"]{ width: 30rem;};
+    input[value="Message"]{ width: 30rem;}
+    .Control{margin: 0rem auto; padding: 0rem auto;margin-bottom: 3rem;}
+    span a {text-decoration: None; margin-top-top: 2rem;}
+    input[value=Comment]{font-size: 12px; color:rgb(83, 83, 83); height: 3rem; width: 10rem; margin-top: -3.4rem;vertical-align:top; display: inline-block;}
+</style>
+
+
+
+
+<h1 value="Hike" style="color:rgb(35, 153, 183);"> User: @ViewBag.PageUser.First_Name @ViewBag.PageUser.Last_Name </h1>
+@if(TempData["ItWorked"] != null){
+    <h4>" @TempData["ItWorked"] " -  @ViewBag.PageUser.First_Name</h4>
+}
+@if( TempData["ItWorked2"] != null)
+{
+    <h4>" @TempData["ItWorked2"]" -  @ViewBag.PageUser.First_Name</h4>
+}
+
+<div class="form-group">
+<h3><Span style="color:rgb(35, 153, 183);">Joined </span> @ViewBag.PageUser.Created_at.ToString("D")</h3>
+
+</div>
+
+@if(@ViewBag.PageUser.Updated_at != null)
+{
+<div class="form-group">
+<h3><Span style="color:rgb(35, 153, 183);">Last Activity: </span> @ViewBag.PageUser.Updated_at</h3>
+</div>
+}
+
+
+<div class="form-group">
+<h3>User Level: @ViewBag.PageUser.User_Level</h3>
+</div>
+
+
+
+@if(@ViewBag.PageUser.Description != null)
+{
+<div class="form-group">
+<h3>Description: @ViewBag.PageUser.Description</h3>
+</div>
+}
+else {
+    <h3>Description:None</h3>
+}
+
+
+
+
+@if(@ViewBag.PageUser != null)
+{
+    @if(@ViewBag.PageUser.UsersId == ViewBag.IdOfUser.UsersId)
+    {
+    <a href="/edit_profile/@ViewBag.PageUser.UsersId"><button value="hover" class="Wider_Butt">Add Description, @ViewBag.PageUser.First_Name ?</button></a> 
+    }
+    else{
+    <a href="/Dashboard_Page"><button value="hover" class="Wider_Butt">Explore More Users, @ViewBag.IdOfUser.First_Name ?</button></a> 
+
+    }
+    
+}
+
+
+
+
+<div class="Column">
+<h1 style="color:rgb(35, 153, 183);">Leave A Message!</h1>
+<form action="/user_page/@ViewBag.PageUser.UsersId/create_message" method="POST">
+        <textarea name="Content" rows="4" cols="50" name="content" placeholder="Tell em something cool!"></textarea><br><br>
+        <input type="submit"class="Wider_Butt" value="Post Message">
+</form>
+
+
+</div>
+<div class="Message_Contain">
+
+    @if(ViewBag.Messages != null)
+    {
+        @foreach(var message in ViewBag.Messages){
+            
+            <span style="color:rgb(35, 153, 183);">@message.Creator.First_Name  @message.Creator.Last_Name     |  Created At @message.Creator.Created_at  For @ViewBag.PageUser.First_Name</span>
+            <div class="Message_Contain"> <BR>
+            <div class="Control">'@message.Content' 
+                <BR>
+                @if(ViewBag.PageUser.UsersId == ViewBag.IdOfUser.UsersId || @message.Creator.UsersId == ViewBag.IdOfUser.UsersId)
+                {
+                <span><a href="/delete/@message.MessageId">Delete Message</a> |  <a href="">Edit Message</a> </span>
+                }
+                else{
+        
+                }
+                 
+              
+         <form action="/comment_on/@message.MessageId/" method="POST">
+        <textarea rows="4" cols="50" name="Comment" placeholder="Write Comment Here or edited Message Here"></textarea><br><br>
+        <input type="submit"class="Wider_Butt" value="Comment">
+            </form>
+           
+
+                
+                
+
+            
+            </div></div>
+        }
+          
+
+    }
+
+</div>
+
+
+
+
+
+
+    
+
+

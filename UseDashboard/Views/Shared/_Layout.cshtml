@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BeltExam</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+            asp-fallback-href="~/lib/skeleton/css/skeleton.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+
+        .Nav:hover. a:hover {color: #207AD1;}
+    .Wide_Butt { width: 8rem;margin-left: -2rem;vertical-align: top;}
+    button[value="hover"]:hover {color: rgb(35, 146, 146); 
+     -webkit-transform: scale(1.1);
+  transform: scale(1.1);}
+    </style>
+</head>
+<body>
+    <div class="container body-content">
+        @using BeltExam.Models
+
+
+<div class="Nav">
+       <h1>UserDashboard</h1>
+         @if(ViewBag.User != null){
+
+             <h3>Welcome, @ViewBag.UserName </h3>
+           
+        
+       
+           
+            }
+        
+   
+            
+      
+        
+          @if(ViewBag.User == null){
+            <h3>Access Your Account</h3> 
+        }
+   
+        <a href="https://github.com/ninap41"><button value="hover" class="Wide_Butt">Github</button></a>
+        <a asp-action="DashBoard_Page"><button value="hover" class="Wide_Butt">Home</button></a> 
+
+        @if(ViewBag.User != null){
+                    <a asp-action="Logout"><button value="hover" class="Wide_Butt">Logout</button></a> 
+
+        }
+     
+
+</div>
+        @RenderBody()
+    </div>
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        
+        
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

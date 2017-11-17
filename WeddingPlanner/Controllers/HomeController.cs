@@ -268,6 +268,10 @@ namespace WeddingPlanner.Controllers
             int? userID = HttpContext.Session.GetInt32("UserID"); //transfer session
             string thisuser = HttpContext.Session.GetString("UserName"); 
             ViewBag.User = thisuser;
+         User currentUser = _context.Users.SingleOrDefault(user => user.UsersId == (int)userID);
+
+            ViewBag.UserName = currentUser.First_Name; // USERNAME STRING
+
 
             if(userID == null)
             {
